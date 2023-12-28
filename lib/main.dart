@@ -44,23 +44,28 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          titleText(),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: shapeSize(),
-          ),
-          const Spacer(),
-          sizeSlider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [changeShapeButton(), changeColorButton()],
-          ),
-        ],
-      )),
+        child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+        titleText(),
+        tileAndShapePadder(),
+        const Spacer(),
+        sizeSlider(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [changeShapeButton(), changeColorButton()],
+        ),
+                ],
+              ),
+      ),
     );
+  }
+
+  Padding tileAndShapePadder() {
+    return Padding(
+        padding: const EdgeInsets.all(20),
+        child: shapeSize(),
+      );
   }
 
   Text titleText() {
